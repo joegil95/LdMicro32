@@ -1,36 +1,35 @@
 
-	LdMicro32 for AVR ATMega microcontrollers
+	LdMicro for AVR ATMega microcontrollers
 	_________________________________________
 
 
-	LdMicro32 is a fork project based on LdMicro version 4.4.3
-	It offers new functions like SPI or I2C via C programming
+	LdMicro 5 offers new functions like SPI or I2C via C programming
 
 	If everything is well configured, one can generate C files,
-	hex file, and upload it to the target without exiting LdMicro32
+	hex file, and upload it to the target without exiting LdMicro
 
 
 
-How to test LdMicro32 on AVRs (AtMega) with ADC, PWM, SPI or I2C functions:
+How to test LdMicro on AVRs (AtMega) with ADC, PWM, SPI or I2C functions:
 ______________________________________________________________________
 
 1)	Install AvrStudio 5, 6 or 7 (7 not tested) from Atmel site
-	or install directly an avr-gcc for windows (not tested).
+	or install directly an avr-gcc for windows
 
-2)	Copy LdMicro32 executable and flashMCU.bat in a same directory.
+2)	Copy LdMicro executable and flashMCU.bat in a same directory
+	Also copy LIBRARIES_FOR directory and its content at the same place.
 
 3)	Edit FlashMCU.bat (right click + Modify) and in section AVRGCC,
 	modify GCCPATH to point to your avr-gcc path instead of mine
 
 	If you intend to use AvrDude to flash the target, modify the path
 	DUDPATH too, and adapt avrdude.exe command line according to your 
-	AVR programmer.
+	AVR programmer
 
 	It'll be possible anyway to generate hex file with script and
 	flash the target with it manually next.
 
-4)	Create a ladder with LdMicro32 in a directory, and copy C libraries
-	for AVRs in a subdirectory called "lib"
+4)	Create a ladder with LdMicro in a directory
 
 5)	Compile the ladder with "Compile ATMEL AVR-GCC" (not the same now
 	as Win-AVR) and generate the C file in the same directory as the
@@ -39,10 +38,12 @@ ______________________________________________________________________
 	It also generates a (.h) file and a ladder.h header
 	With joined libraries, it makes a ready-made C project
 
-6)	Launch FlashMCU.bat from LdMicro32 to get the hex file and upload 
+6)	Launch FlashMCU.bat from LdMicro to get the hex file and upload 
 	it to the target automatically or manually from "bin" subdirectory
 
 	Look at the command window ; there shouln't be compiling errors
+	Librairies are automaticaly copied (first time only) in "lib" 
+	subdirectory where they can be adapted if need be
 	Intermediate files are generated in "obj" subdirectory
 
 7)	Test generated hex file on target...

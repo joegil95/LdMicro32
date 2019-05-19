@@ -1,22 +1,22 @@
 
-	LdMicro32 for PIC16F microcontrollers
+	LdMicro for PIC16F microcontrollers
 	_________________________________________
 
 
-	LdMicro32 is a fork project based on LdMicro version 4.4.3
-	It offers new functions like SPI or I2C via C programming
+	LdMicro 5 offers new functions like SPI or I2C via C programming
 
 	If everything is well configured, one can generate C files,
-	hex file, and upload it to the target without exiting LdMicro32
+	hex file, and upload it to the target without exiting LdMicro
 
 
 
-How to test LdMicro32 on PICs (16F) with ADC, PWM, SPI or I2C functions:
+How to test LdMicro on PICs (16F) with ADC, PWM, SPI or I2C functions:
 ______________________________________________________________________
 
-1)	Install MPLAB (version 8 tested) with Hi-Tech C alias PicC compiler
+1)	Install Hi-Tech C alias PicC compiler for PIC16
 	
-2)	Copy LdMicro32 executable and flashMCU.bat in a same directory.
+2)	Copy LdMicro executable and flashMCU.bat in a same directory
+	Also copy LIBRARIES_FOR directory and its content at the same place
 
 3)	Edit FlashMCU.bat (right click + Modify) and in section HTC,
 	modify PCCPATH to point to your picc path instead of mine
@@ -25,10 +25,9 @@ ______________________________________________________________________
 	fill in the Transfer section with proper commands.
 
 	It'll be possible anyway to generate hex file with script and
-	flash the target with it manually next.
+	flash the target with it manually next
 
-4)	Create a ladder with LdMicro32 in a directory, and copy C libraries
-	for PICs in a subdirectory called "lib"
+4)	Create a ladder with LdMicro in a directory.
 
 5)	Compile the ladder with "Compile HI-TECH C for PIC" and generate 
 	the C file in the same directory as the source (.ld) file, 
@@ -37,10 +36,12 @@ ______________________________________________________________________
 	It also generates a (.h) file and a ladder.h header
 	With joined libraries, it makes a ready-made C project
 
-6)	Launch FlashMCU.bat from LdMicro32 to get the hex file and upload 
+6)	Launch FlashMCU.bat from LdMicro to get the hex file and upload 
 	it to the target automatically or manually from "bin" subdirectory
 
 	Look at the command window ; there shouln't be compiling errors
+	Librairies are automaticaly copied (first time only) in "lib" 
+	subdirectory where they can be adapted if need be
 	Intermediate files are generated in "obj" subdirectory
 
 7)	Test generated hex file on target...
@@ -77,7 +78,7 @@ NB:	I2C must be called "I2C" on PICs
 	I2C frequency is also defined in global settings
 	I2C also works only in master mode
 
-NB:	All the frequencies used by ADC, PWM or SPI are obtained from CPU clock
+NB:	All the frequencies used by ADC, PWM, SPI or I2Care obtained from CPU clock
 	by a dividing factor. There are few choices for this factor, so frequencies
 	are very approximative. 
 
