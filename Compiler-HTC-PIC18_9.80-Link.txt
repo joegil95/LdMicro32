@@ -1,6 +1,0 @@
-Link to download free Hi-Tech C compiler for PIC18:
-___________________________________________________
-
-
-http://hpvexin.free.fr/script/temp/Compiler-HTC-Pic18_9.80.exe
-
